@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASICS Hub - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; }
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; }
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .nav-pills-custom .nav-link { color: var(--asics-blue); background: #fff; font-weight: 600; border-radius: 8px; margin-right: 10px; box-shadow: var(--card-shadow); }
+        .nav-pills-custom .nav-link.active { background: var(--asics-blue); color: white; }
+        .footer-premium { background: var(--bg-dark); color: #a0aec0; padding: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html"><i class="fas fa-bolt mr-2 text-warning"></i>ASICS HUB</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html">Media Vault</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+                    <li class="nav-item"><a class="nav-link" href="site.html">Site Map</a></li>
+                </ul>
+                <form class="form-inline" onsubmit="alert('Searching analytical nodes...'); return false;">
+                    <input class="form-control mr-sm-2 bg-dark text-white border-0 rounded-pill px-3" type="search" placeholder="Search data...">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5">
+        <div class="mb-5">
+            <h2 class="text-dark font-weight-bold">System Dashboard</h2>
+            <p class="text-muted">Broadcast metrics and analytical data segments.</p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 text-white p-3 shadow-sm" style="background: linear-gradient(135deg, #001e62 0%, #0a1128 100%); border-radius: 16px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning font-weight-bold"><i class="fas fa-bell mr-2"></i>Live Alert</h5>
+                        <p class="card-text small text-white-50">Updates initiated for elite athlete compliance contracts.</p>
+                        <button class="btn btn-light btn-sm font-weight-bold text-dark mt-3" data-toggle="modal" data-target="#noticeModal">Open Notice</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <ul class="nav nav-pills nav-pills-custom mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" id="pills-news-tab" data-toggle="pill" href="#pills-news">Corporate News</a></li>
+                    <li class="nav-item"><a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech">GEL™ Innovations</a></li>
+                </ul>
+                <div class="tab-content bg-white p-4 rounded shadow-sm" id="pills-tabContent" style="border-radius: 16px;">
+                    <div class="tab-pane fade show active" id="pills-news">
+                        <h5 class="font-weight-bold text-dark">Eco-Forward Shoe Integration</h5>
+                        <span class="text-muted small">Updated: June 2026</span>
+                        <p class="mt-3 text-secondary">Engineers successfully conceptualized pristine lines of high-performance items focused on cutting eco-processing footprint indexes down by 25% globally.</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-tech">
+                        <h5 class="font-weight-bold text-dark">Shock Dispersion Mechanics</h5>
+                        <p class="mt-3 text-secondary">The latest custom layout variations deployed across ASICS GEL™ platforms absorb pressure trajectories flawlessly, dampening joint impacts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0" style="border-radius: 16px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 py-3">
+                    <h5 class="modal-title font-weight-bold small"><i class="fas fa-shield-alt text-warning mr-2"></i>INTERNAL BROADCAST</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body p-4 text-secondary">All connected teams must register biomatrices data tracking sheets to sports optimization nodes by this weekend cycle.</div>
+                <div class="modal-footer border-0 bg-light"><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Dismiss</button></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-premium text-center mt-5">
+        <div class="container"><p class="small text-muted mb-0">Established: April 2026 | Revised: June 2026 | Built by Group 3 (IMD318)</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

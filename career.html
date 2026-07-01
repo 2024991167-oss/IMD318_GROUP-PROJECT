@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | ASICS Athletic Hub</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; overflow-x: hidden; }
+        
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; font-size: 0.85rem; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        
+        /* Premium Navbar with Logo Integration */
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; transition: all 0.3s ease; }
+        .navbar-premium .nav-link { color: #fff !important; font-weight: 600; font-size: 0.85rem; position: relative; }
+        
+        /* Navbar Hover Underline Animation */
+        .navbar-premium .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--asics-orange); transition: width 0.3s ease; }
+        .navbar-premium .nav-link:hover::after { width: 100%; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .navbar-premium .nav-item.active .nav-link::after { width: 100%; }
+        
+        /* Premium Background Section with Image Layout */
+        .careers-hero-section {
+            background: linear-gradient(rgba(80, 82, 81, 0.85), rgba(244, 247, 246, 0.92)), 
+                        url('https://s3.divcom.com/www.runninginsight.com/images/USE%20Nukuri-SMSB-1863.jpg.large.1024x1024.jpeg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 80vh;
+        }
+
+        /* CSS Animation Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-header {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .animated-card-1 {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .animated-card-2 {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+        }
+
+        /* Aesthetic Card Interactions */
+        .aesthetic-card { 
+            background: #ffffff; 
+            border: none; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            padding: 25px; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            top: 0;
+        }
+        
+        .aesthetic-card:hover {
+            top: -8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-bottom: 3px solid var(--asics-orange);
+        }
+
+        /* Button Custom Accent Style */
+        .btn-asics {
+            background-color: var(--asics-blue);
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-asics:hover {
+            background-color: var(--asics-orange);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .footer-premium { 
+            background: var(--bg-dark); 
+            color: #a0aec0; 
+            padding: 40px 0; 
+            border-top: 2px solid var(--asics-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container-fluid mx-md-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg" alt="ASICS Logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">News/Blog</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="career.html">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="careers-hero-section py-5 d-flex align-items-center">
+        <div class="container">
+            <div class="text-center mb-5 animated-header">
+                <h2 class="font-weight-bold text-dark text-uppercase">Join Our Legacy</h2>
+                <p class="text-muted">Explore open positions inside our localized corporate production departments.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4 animated-card-1">
+                    <div class="aesthetic-card">
+                        <span class="badge badge-success float-right px-3 py-1 rounded-pill">Full-Time</span>
+                        <h5 class="font-weight-bold text-dark mb-2">Sports Science Bio-Engineer</h5>
+                        <p class="small text-muted"><i class="fas fa-map-marker-alt mr-1 text-danger"></i> Tokyo Lab Network</p>
+                        <p class="text-secondary small">Responsible for compiling pressure testing data sheets and monitoring custom mold structural optimization metrics.</p>
+                        <button class="btn btn-sm btn-asics rounded-pill mt-2 px-4" onclick="alert('Lodge your CV documents to hr@asics-fictional-domain.corp');">Apply Position</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animated-card-2">
+                    <div class="aesthetic-card">
+                        <span class="badge badge-warning float-right px-3 py-1 rounded-pill text-white" style="background-color: var(--asics-orange);">Remote</span>
+                        <h5 class="font-weight-bold text-dark mb-2">Digital Systems UX Architect</h5>
+                        <p class="small text-muted"><i class="fas fa-map-marker-alt mr-1 text-danger"></i> Global Infrastructure Node</p>
+                        <p class="text-secondary small">Oversee design layouts and responsive deployment frameworks across regional internal operational portal networks.</p>
+                        <button class="btn btn-sm btn-asics rounded-pill mt-2 px-4" onclick="alert('Lodge your CV documents to hr@asics-fictional-domain.corp');">Apply Position</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium text-center">
+        <div class="container">
+            <p class="small text-muted mb-0">&copy; ©2026 ASICS Sdn Bhd. All Rights Reserved | Built by Group 3 (IMD318)</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

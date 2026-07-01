@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Blog | ASICS Athletic Hub</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; overflow-x: hidden; }
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; font-size: 0.85rem; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        
+        /* Premium Navbar with Logo Integration */
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; transition: all 0.3s ease; }
+        .navbar-premium .nav-link { color: #fff !important; font-weight: 600; font-size: 0.85rem; position: relative; }
+        
+        /* Navbar Hover Underline Animation */
+        .navbar-premium .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--asics-orange); transition: width 0.3s ease; }
+        .navbar-premium .nav-link:hover::after { width: 100%; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .navbar-premium .nav-item.active .nav-link::after { width: 100%; }
+        
+        /* 1. Header Background with High-Quality Image and Overlay */
+        .blog-header-bg {
+            background: linear-gradient(rgba(10, 17, 40, 0.82), rgba(10, 17, 40, 0.88)), 
+                        url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1920&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            padding: 90px 0;
+            color: #ffffff;
+            border-bottom: 3px solid var(--asics-orange);
+            animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        
+        /* 2. Main Accordion Container Staggered Entrance Animation */
+        .main-blog-content {
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        /* 3. Accordion Panel Hover and Dynamic Transition Effects */
+        .accordion .card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+        }
+        .accordion .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+            z-index: 5;
+        }
+
+        /* Smooth chevron rotation handling */
+        .btn-block .fa-chevron-down {
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease;
+        }
+        .btn-block:not(.collapsed) .fa-chevron-down {
+            transform: rotate(-180deg);
+            color: var(--asics-orange);
+        }
+
+        /* Custom Keyframe Timelines */
+        @keyframes slideDownFade {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Premium Brand Footer with matching Top Accent Line */
+        .footer-premium { 
+            background: var(--bg-dark); 
+            color: #a0aec0; 
+            padding: 40px 0; 
+            border-top: 2px solid var(--asics-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container-fluid mx-md-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg" alt="ASICS Logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="blog.html">News/Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="blog-header-bg text-center">
+        <div class="container">
+            <h2 class="font-weight-bold text-uppercase text-white mb-2">Corporate Press Logs</h2>
+            <p class="text-white-50 lead mb-0">Review institutional reports and technical engineering journals.</p>
+        </div>
+    </header>
+
+    <section class="container py-5 main-blog-content">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="accordion shadow-sm text-secondary" id="blogAccordion" style="border-radius:16px; overflow:hidden;">
+                    
+                    <div class="card border-0 bg-white">
+                        <div class="card-header bg-white border-bottom py-3" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark font-weight-bold btn-block text-left d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#collapseOne">
+                                    <span><i class="far fa-newspaper mr-2 text-warning"></i> 2026 Tokyo Athletic Partnership Phase Deployed</span>
+                                    <i class="fas fa-chevron-down text-muted small"></i>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#blogAccordion">
+                            <div class="card-body p-4 bg-light">
+                                <span class="badge badge-secondary mb-2">Announcement</span>
+                                <p class="small text-muted">Published: June 2026</p>
+                                Our administration panels officially certified financial frameworks allocating performance tracking devices across regional track teams preparing cycles for the Tokyo 2026 athletic events.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 bg-white">
+                        <div class="card-header bg-white border-bottom py-3" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark font-weight-bold btn-block text-left collapsed d-flex align-items-center justify-content-between" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                                    <span><i class="fas fa-flask mr-2 text-info"></i> Advanced Materials Processing Milestones</span>
+                                    <i class="fas fa-chevron-down text-muted small"></i>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#blogAccordion">
+                            <div class="card-body p-4 bg-light">
+                                <span class="badge badge-info mb-2">Research Paper</span>
+                                <p class="small text-muted">Published: May 2026</p>
+                                Materials analysis squads unlocked custom bio-polyurethane meshes capable of resisting severe flex load degradation vectors, prolonging structural longevity indexes seamlessly.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium text-center">
+        <div class="container"><p class="small text-muted mb-0">©2026 ASICS Sdn Bhd. All Rights Reserved | Built by Group 3 (IMD318)</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

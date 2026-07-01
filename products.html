@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | ASICS Athletic Hub</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+<style>
+    :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; --text-main: #1c2541; }   
+    /* UPDATED BODY STRUCUTRE */
+    body { 
+        font-family: 'Inter', sans-serif; 
+        /* 1. Add your image URL here */
+        background-image: linear-gradient(rgba(244, 247, 246, 0.377), rgba(244, 247, 246, 0.90)), url('https://thenextlegend.com/cdn/shop/collections/HD-wallpaper-asics-logo-blue-background-asics-3d-logo-3d-art-asics-brands-logo-blue-3d-asics-logo_eccc51bd-b68b-4485-9e62-0f0363f8c7e6.jpg?v=1706276508');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        color: var(--text-main); 
+        overflow-x: hidden; 
+    }
+    h1, h2, h3, h4, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; }        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; }
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; font-size: 0.85rem; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        
+        /* Premium Navbar with Logo Integration */
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; transition: all 0.3s ease; }
+        .navbar-premium .nav-link { color: #fff !important; font-weight: 600; font-size: 0.85rem; position: relative; }
+        
+        /* Navbar Hover Underline Animation */
+        .navbar-premium .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--asics-orange); transition: width 0.3s ease; }
+        .navbar-premium .nav-link:hover::after { width: 100%; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .navbar-premium .nav-item.active .nav-link::after { width: 100%; }
+        
+        /* Product Showcase Layout & Hover Animations */
+        .product-card { 
+            background: #ffffff; 
+            border: none; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            overflow: hidden; 
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease; 
+            height: 100%; 
+            position: relative;
+        }
+        
+        /* Smooth scale up and lifting effect */
+        .product-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 20px 40px rgba(0,18,98,0.15); 
+        }
+
+        /* Interactive border pulse on card hover */
+        .product-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--asics-blue), var(--asics-orange));
+            transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;
+        }
+        .product-card:hover::before { transform: scaleX(1); }
+
+        .product-img-container { background-color: #f8f9fa; position: relative; padding: 20px; text-align: center; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .product-img { max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        
+        /* Sleeker shoe rotation effect */
+        .product-card:hover .product-img { transform: scale(1.1) rotate(-5deg); }
+        
+        /* Pulsing badge animation */
+        .badge-new { 
+            position: absolute; top: 15px; left: 15px; background: var(--asics-orange); color: white; font-weight: 800; letter-spacing: 1px; padding: 6px 12px; border-radius: 50px; font-size: 0.75rem; 
+            box-shadow: 0 4px 10px rgba(255,90,0,0.3); z-index: 2;
+            animation: pulse-orange 2s infinite;
+        }
+
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 90, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0); }
+        }
+        
+        /* Custom Button Style */
+        .btn-asics { background-color: var(--asics-blue); color: #fff; font-weight: 600; border-radius: 30px; padding: 10px 24px; transition: all 0.3s; border: none; }
+        .btn-asics:hover { background-color: var(--asics-orange); color: #fff; box-shadow: 0 5px 15px rgba(255,90,0,0.3); }
+        
+        .footer-premium { background: var(--bg-dark); color: #a0aec0; padding: 40px 0; }
+
+        /* Style for the Image Map section to keep it centered and neat */
+        .interactive-map-container {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container-fluid mx-md-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg" alt="ASICS Logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">News/Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+            <span class="badge badge-pill badge-primary px-3 py-2 mb-2 font-weight-bold text-uppercase" style="background-color: var(--asics-blue);">Elite Footwear</span>
+            <h2 class="font-weight-bold text-dark text-uppercase" style="letter-spacing:1px;">Latest Innovation Releases</h2>
+            <p class="text-muted">Engineered at the ASICS Institute of Sport Science to maximize biomechanical efficiency.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            
+            <div class="col-md-5 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="badge-new text-uppercase">New Release</span>
+                        <img src="https://preview.thenewsmarket.com/Previews/ASIC/StillAssets/1920x1080/693802_v2.jpg" alt="ASICS GEL-KAYANO 32" class="product-img">
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-2">
+                            <span class="text-muted small font-weight-bold text-uppercase"><i class="fas fa-running mr-1 text-primary"></i> Stability Running</span>
+                        </div>
+                        <h4 class="font-weight-bold text-dark mb-3">GEL-KAYANO 32</h4>
+                        <p class="text-secondary small">Representing the pinnacle of premium structured cushioning and stability engineering. Built specifically for long-distance runners and individuals with overpronation tendencies, it focuses heavily on structural skeletal alignment.</p>
+                        
+                        <p class="text-secondary small">Integrates an adaptive <strong>4D GUIDANCE SYSTEM™</strong> that works natively with your body's natural biomechanical vectors to reset your stride position on demand. It features embedded heel <strong>PureGEL™ Technology</strong> to absorb aggressive impact forces, while the engineered mesh upper maintains perfect zonal ventilation over intense marathon thresholds.</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 mb-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="badge-new text-uppercase">Elite Racing</span>
+                        <img src="https://www.220triathlon.com/wp-content/uploads/sites/4/2024/09/Asics-Metaspeed-Sky-Paris-running-shoes.jpg?w=1024" alt="ASICS METASPEED Sky Paris" class="product-img">
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-2">
+                            <span class="text-muted small font-weight-bold text-uppercase"><i class="fas fa-bolt mr-1 text-warning"></i> Carbon Speed</span>
+                        </div>
+                        <h4 class="font-weight-bold text-dark mb-3">METASPEED Sky Paris</h4>
+                        <p class="text-secondary small">An elite, ultra-lightweight racing flat engineered specifically for competitive stride-style runners who generate velocity by expanding their step length. Every single design metric is optimized to shed weight and return maximum kinetic energy.</p>
+                        
+                        <p class="text-secondary small">Constructed with a full-length, specially contoured <strong>Carbon Fiber Plate</strong> positioned to compress the midsole foam optimally, providing a dramatic vertical snap forward. Powered by <strong>FF BLAST™ TURBO PLUS</strong> cushioning and wrapped in a translucent <strong>MOTION WRAP™ 2.0</strong> upper for a secure, weightless lockdown.</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-4 text-center" data-aos="fade-up" data-aos-duration="800">
+        <div class="mb-4">
+            <h3 class="font-weight-bold text-dark text-uppercase" style="letter-spacing:1px;">Shop the Look</h3>
+            <p class="text-muted small">Click directly on the shirt, pants, or shoes in the image below to browse our gear catalog.</p>
+        </div>
+        
+        <div class="interactive-map-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_1kQMHLsSywxJRKqM8wap6fKYMfPTtrMi8C4zepF00Q&s=10" 
+                 usemap="#asics-gear-map" 
+                 alt="ASICS Gear Interactive Map"
+                 class="img-fluid"
+                 style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+
+            <map name="asics-gear-map">
+                <area shape="rect" coords="10,10,290,120" alt="ASICS Shirts" title="Shop ASICS Shirts" href="https://www.asics.com/us/en-us/mens-clothing/" target="_blank">
+                
+                <area shape="rect" coords="10,121,290,220" alt="ASICS Pants" title="Shop ASICS Pants & Shorts" href="https://www.asics.com/my/en-my/mens-pants/?srsltid=AfmBOopX6hlhsq4YrMqjFWA5crwxbqAA-2z7OGqdAFUJWTm8lah1iWgV">
+                
+                <area shape="rect" coords="10,221,290,300" alt="ASICS Shoes" title="Shop ASICS Shoes" href="https://www.asics.com/us/en-us/mens-running-shoes/" target="_blank">
+            </map>
+        </div>
+    </section>
+    <footer class="footer-premium text-center">
+        <div class="container"><p class="small text-muted mb-0">©2026 ASICS Sdn Bhd. All Rights Reserved | Built by Group 3 (IMD318) | Project Framework 2026</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true // Ensures animations only happen once when scrolling down
+        });
+    </script>
+</body>
+</html>

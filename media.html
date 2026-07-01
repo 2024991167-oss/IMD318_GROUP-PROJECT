@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASICS Hub - Media Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; }
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; }
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .aesthetic-card { background: #ffffff; border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .media-box { border-radius: 12px; background: #000; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .footer-premium { background: var(--bg-dark); color: #a0aec0; padding: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html"><i class="fas fa-running mr-2 text-warning"></i>ASICS HUB</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="media.html">Media Vault</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+                    <li class="nav-item"><a class="nav-link" href="site.html">Site Map</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="text-dark font-weight-bold">Media Resource Vault</h2>
+            <p class="text-muted">Aesthetic audio and video components for branding orientation.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card aesthetic-card p-4">
+                    <h5 class="font-weight-bold mb-3 text-dark"><i class="fas fa-video text-danger mr-2"></i>Campaign Stream Reel</h5>
+                    <div class="embed-responsive embed-responsive-16by9 media-box">
+                        <video controls class="embed-responsive-item">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card aesthetic-card p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="font-weight-bold mb-2 text-primary"><i class="fas fa-microphone mr-2"></i>Executive Address</h5>
+                        <p class="text-muted small">Mid-year motivational briefs published by the management panel.</p>
+                    </div>
+                    <div class="p-3 bg-light rounded mt-4">
+                        <audio controls class="w-100"><source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium text-center">
+        <div class="container"><p class="small text-muted mb-0">ASICS Portal Architecture | Group 3</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
