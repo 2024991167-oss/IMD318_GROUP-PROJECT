@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Access Security | ASICS Hub</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root { --bg-dark: #0a1128; --asics-blue: #001e62; --asics-orange: #ff5a00; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; height: 100vh; display: flex; flex-direction: column; }
+        .navbar-premium .nav-link, .navbar-premium .navbar-brand { color: #fff !important; font-weight: 600; font-size: 0.85rem; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        
+        /* Premium Navbar with Logo Integration */
+        .navbar-premium { background: rgba(10, 17, 40, 0.95); border-bottom: 2px solid var(--asics-orange); padding: 15px 0; transition: all 0.3s ease; }
+        .navbar-premium .nav-link { color: #fff !important; font-weight: 600; font-size: 0.85rem; position: relative; }
+        
+        /* Navbar Hover Underline Animation */
+        .navbar-premium .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--asics-orange); transition: width 0.3s ease; }
+        .navbar-premium .nav-link:hover::after { width: 100%; }
+        .navbar-premium .nav-item.active .nav-link { color: var(--asics-orange) !important; }
+        .navbar-premium .nav-item.active .nav-link::after { width: 100%; }
+
+        .aesthetic-card { background: #ffffff; border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--asics-orange); }
+        .footer-premium { background: var(--bg-dark); color: #a0aec0; padding: 30px 0; }
+        .toggle-link { color: var(--asics-orange); cursor: pointer; text-decoration: none; font-weight: 600; }
+        .toggle-link:hover { text-decoration: underline; color: #cc4800; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container-fluid mx-md-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg" alt="ASICS Logo" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">News/Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card aesthetic-card p-4">
+                    <div class="card-body text-center" id="authZone">
+                        <div id="loginView">
+                            <h4 class="font-weight-bold text-dark mb-1">Portal Gateway</h4>
+                            <p class="text-muted small mb-4">Input mock biometric credential metrics token keys.</p>
+                            <form id="portalLoginForm">
+                                <div class="form-group text-left">
+                                    <label class="small font-weight-bold text-dark">Identification ID</label>
+                                    <input type="text" class="form-control bg-light border-0" id="userId" placeholder="e.g., ASICS-GROUP3" required>
+                                </div>
+                                <button type="submit" class="btn btn-warning btn-block font-weight-bold mt-4 text-white" style="background:var(--asics-orange); border:none;">Unlock Metrics Console</button>
+                            </form>
+                            <p class="small text-muted mt-3 mb-0">New to the portal? <span class="toggle-link" id="toSignUp">Sign Up</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="broadcastModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0" style="border-radius: 16px; overflow: hidden;">
+                <div class="modal-header bg-dark text-white border-0 py-3">
+                    <h5 class="modal-title font-weight-bold small text-uppercase"><i class="fas fa-exclamation-triangle text-warning mr-2"></i>Internal Notice Alert System</h5>
+                </div>
+                <div class="modal-body p-4 text-secondary small">
+                    All connected technical squads must synchronize analytical data tracking tables directly to the centrally secured cloud matrix repository before the approaching audit maintenance window.
+                </div>
+                <div class="modal-footer border-0 bg-light"><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Acknowledge</button></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-premium text-center mt-auto">
+        <div class="container"><p class="small text-muted mb-0">©2026 ASICS Sdn Bhd. All Rights Reserved | Built by Group 3 (IMD318)</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Baseline Login View template fragment (Only Identification ID)
+        const loginFormHtml = `
+            <div id="loginView">
+                <h4 class="font-weight-bold text-dark mb-1">Portal Gateway</h4>
+                <p class="text-muted small mb-4">Input mock biometric credential metrics token keys.</p>
+                <form id="portalLoginForm">
+                    <div class="form-group text-left">
+                        <label class="small font-weight-bold text-dark">Identification ID</label>
+                        <input type="text" class="form-control bg-light border-0" id="userId" placeholder="e.g., ASICS-GROUP3" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block font-weight-bold mt-4 text-white" style="background:var(--asics-orange); border:none;">Unlock Metrics Console</button>
+                </form>
+                <p class="small text-muted mt-3 mb-0">New to the portal? <span class="toggle-link" id="toSignUp">Sign Up</span></p>
+            </div>
+        `;
+
+        // Baseline Sign Up View template fragment (Includes Name and Phone)
+        const signUpFormHtml = `
+            <div id="signUpView">
+                <h4 class="font-weight-bold text-dark mb-1">Create Account</h4>
+                <p class="text-muted small mb-4">Register your metrics token metadata profiles.</p>
+                <form id="portalSignUpForm">
+                    <div class="form-group text-left">
+                        <label class="small font-weight-bold text-dark">Full Name</label>
+                        <input type="text" class="form-control bg-light border-0" id="newUserName" placeholder="e.g., John Doe" required>
+                    </div>
+                    <div class="form-group text-left mt-3">
+                        <label class="small font-weight-bold text-dark">Identification ID</label>
+                        <input type="text" class="form-control bg-light border-0" id="newUserId" placeholder="e.g., ASICS-NEWUSER" required>
+                    </div>
+                    <div class="form-group text-left mt-3">
+                        <label class="small font-weight-bold text-dark">Phone Number</label>
+                        <input type="tel" class="form-control bg-light border-0" id="newUserPhone" placeholder="e.g., +60123456789" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block font-weight-bold mt-4 text-white" style="background:var(--asics-orange); border:none;">Register & Unlock Portal</button>
+                </form>
+                <p class="small text-muted mt-3 mb-0">Already have a tag? <span class="toggle-link" id="toLogin">Log In</span></p>
+            </div>
+        `;
+
+        // Intercept form submissions
+        document.body.addEventListener('submit', function(e) {
+            if (e.target && (e.target.id === 'portalLoginForm' || e.target.id === 'portalSignUpForm')) {
+                e.preventDefault();
+                
+                let profileDetailsHtml = '';
+
+                if (e.target.id === 'portalLoginForm') {
+                    const targetID = document.getElementById('userId').value;
+                    profileDetailsHtml = `<div class="small text-secondary text-center"><strong>ID Tag:</strong> ${targetID}</div>`;
+                } else {
+                    const targetName = document.getElementById('newUserName').value;
+                    const targetID = document.getElementById('newUserId').value;
+                    const targetPhone = document.getElementById('newUserPhone').value;
+                    
+                    profileDetailsHtml = `
+                        <div class="small mb-1 text-secondary"><strong>User:</strong> ${targetName}</div>
+                        <div class="small mb-1 text-secondary"><strong>ID Tag:</strong> ${targetID}</div>
+                        <div class="small text-secondary"><strong>Phone:</strong> ${targetPhone}</div>
+                    `;
+                }
+                
+                // Display the clearance active metrics page
+                document.getElementById('authZone').innerHTML = `
+                    <div class="text-center py-2">
+                        <i class="fas fa-unlock-alt text-success display-4 mb-3"></i>
+                        <h5 class="text-dark font-weight-bold mb-3">Clearance Active</h5>
+                        
+                        <div class="card bg-light border-0 text-left p-3 mb-4 mx-auto" style="border-radius: 12px; max-width: 320px;">
+                            ${profileDetailsHtml}
+                        </div>
+                        
+                        <div>
+                            <button class="btn btn-danger btn-sm btn-block font-weight-bold mb-2" data-toggle="modal" data-target="#broadcastModal">Launch Internal Memo Broadcast</button>
+                            <button class="btn btn-outline-secondary btn-sm btn-block font-weight-bold" id="logoutBtn"><i class="fas fa-sign-out-alt mr-1"></i>Log Out Portal</button>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+
+        // Event coordination layer catching navigation links and logout
+        document.body.addEventListener('click', function(e) {
+            if (e.target && e.target.id === 'toSignUp') {
+                document.getElementById('authZone').innerHTML = signUpFormHtml;
+            }
+            else if (e.target && e.target.id === 'toLogin') {
+                document.getElementById('authZone').innerHTML = loginFormHtml;
+            }
+            else if (e.target && (e.target.id === 'logoutBtn' || e.target.closest('#logoutBtn'))) {
+                e.preventDefault();
+                document.getElementById('authZone').innerHTML = loginFormHtml;
+            }
+        });
+    </script>
+</body>
+</html>
